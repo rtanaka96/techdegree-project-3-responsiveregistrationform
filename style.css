@@ -1,0 +1,325 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* my css */
+/* main styling */
+body, html {
+    font-family:'Merriweather',serif;
+    color:var(--darkblue);
+}
+
+body {
+    background:#fdfdfd;
+}
+
+:root {
+    --darkblue: #2d3844;
+    --blue: #46698b;
+    --maintext: #adb2b7;
+    --greybg: #eff0f1;
+    --teal: #4ebbb5;
+}
+
+h1 {
+    font-size:1.75em;
+    font-weight:900;
+    color:var(--darkblue);
+    margin:0.5em 0;
+}
+
+p {
+    color:var(--maintext);
+    margin:0.75em 0;
+}
+
+section {
+    text-align: center;
+    padding:1em;
+    box-sizing: border-box;
+}
+
+label, footer {
+    text-transform: capitalize;
+}
+
+hr {
+    border: none;
+	color: var(--darkblue);
+	background-color: var(--darkblue);
+	height:2px;
+    margin:2em 0;
+}
+
+hr:nth-of-type(1) {
+    margin-top:1em;
+}
+
+fieldset {
+    width:100%;
+    padding:0.5em;
+    box-sizing:border-box;
+}
+
+legend {
+    font-size:1.7em;
+    font-weight:900;
+    margin:1em 0;
+}
+
+input, select, textarea, button {
+    box-sizing:border-box;
+    font-family:'Merriweather',serif;
+    font-size:1em;
+    padding:1em;
+    color:var(--darkblue);
+    border-color:transparent;
+    border-radius:0.25em;
+    border-width:2px;
+}
+
+input, select, textarea {
+    background:var(--greybg);
+}
+
+input, select {
+    margin:1em 0;
+    width:100%;
+    padding:1.6em;
+    border:none;
+}
+
+input::placeholder {
+    text-transform: capitalize;
+    font-style:italic;
+    text-align:right;
+    color:var(--maintext);
+    padding-right:0.1em;
+}
+
+input:focus, select:focus {
+    outline-color:var(--blue);
+    transition:outline 300ms;
+}
+
+label {
+    font-weight:500;
+    letter-spacing:0.025em;
+}
+
+select option:disabled, select:invalid {
+    color:var(--maintext);
+}
+
+select option:not(:disabled) {
+    color:var(--darkblue);
+}
+
+textarea {
+    margin-top:1em;
+    width:100%;
+    border-color:transparent;
+    outline:none;
+}
+
+textarea:focus {
+    border-color:var(--blue);
+    transition:border 300ms;
+}
+
+button[type="submit"] {
+    width:100%;
+    padding:2em;
+    background:var(--teal);
+    color:#fff;
+    font-size:1.2em;
+    font-weight:700;
+    cursor:pointer;
+    transition:background-color 300ms;
+}
+
+button[type="submit"]:focus {
+    outline-color:var(--teal) !important;
+    background:var(--maintext);
+    transition:outline background-color 300ms;
+}
+
+button[type="submit"]:hover {
+    background:var(--darkblue);
+    transition:background-color 300ms;
+}
+
+/* header */
+
+header {
+    width:100%;
+    background:var(--darkblue);
+    color:#fff;
+    text-align:center;
+    padding:1.5em;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size:1.5em;
+    font-weight:900;
+}
+
+header p {
+    font-weight:300;
+}
+
+/* blurb */
+
+#blurb {
+    padding:2em;
+}
+
+/* double  hr */
+
+hr#doublehr {
+    width:92%;
+    margin:0 auto;
+    border-top: 0.5em solid var(--darkblue);
+    padding-bottom:0.2em;
+    box-shadow:0em 0.25em 0 0 var(--darkblue);
+    background:none;
+}
+
+/* signup */
+
+#signup {
+    display:flex;
+    text-align:left;
+    flex-flow:column wrap;
+    margin-top:1.5em;
+}
+
+/* newsletter */
+
+#newsletter > fieldset {
+    margin:1em 0;
+    width:100%;
+}
+
+#newsletter fieldset:nth-of-type(1) {
+    margin-top:0;
+}
+
+fieldset > fieldset legend {
+    font-size:1em;
+    font-weight:300;
+}
+
+#newsletter input {
+    width:auto;
+}
+
+label[for="comment"] {
+    margin-bottom:1em;
+}
+
+/* footer */
+
+footer {
+    text-align:center;
+    padding-bottom:3em;
+    font-style:italic;
+    color:var(--maintext);
+}
+
+@media only screen and (min-width:768px) {
+    .title {
+        font-size:1.25em;
+    }
+
+    main {
+        width:70%;
+        margin:0 auto;
+    }
+
+    fieldset {
+        display:flex;
+        flex-flow:column wrap;
+        padding:0;
+    }
+
+    .formgroup {
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content:space-between;
+        align-items:center;
+        width:100%;
+    }
+
+    label {
+        flex:1;
+    }
+    
+    input, select {
+        flex:0 0 60%;
+        margin-right:auto;
+    }
+
+    #newsletter fieldset {
+        align-items: flex-start;
+    }
+
+    #newsletter .formgroup {
+        align-items: center;
+    }
+
+    #newsletter input {
+        flex:0;
+        margin-right:0.5em;
+    }
+
+    hr:nth-of-type(1) {
+        margin:3em 0;
+    }
+}
