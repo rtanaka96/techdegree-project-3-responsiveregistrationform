@@ -51,25 +51,26 @@ table {
 /* main styling */
 body, html {
     font-family:'Merriweather',serif;
-    color:var(--darkblue);
+    color:var(--maintext);
 }
 
 body {
-    background:#fdfdfd;
+    background:#F6F4D2;
 }
 
 :root {
-    --darkblue: #2d3844;
-    --blue: #46698b;
-    --maintext: #adb2b7;
-    --greybg: #eff0f1;
-    --teal: #4ebbb5;
+    --autumn: #A44A3F;
+    --yellowgreen: #64B6AC;
+    --maintext: #A44A3F;
+    --greentea: #CBDFBD;
+    --goldenrod: #D4E09B;
+    --salmon: #F19C79;
 }
 
 h1 {
     font-size:1.75em;
     font-weight:900;
-    color:var(--darkblue);
+    color:var(--autumn);
     margin:0.5em 0;
 }
 
@@ -90,8 +91,8 @@ label, footer {
 
 hr {
     border: none;
-	color: var(--darkblue);
-	background-color: var(--darkblue);
+	color: var(--salmon);
+	background-color: var(--salmon);
 	height:2px;
     margin:2em 0;
 }
@@ -117,14 +118,14 @@ input, select, textarea, button {
     font-family:'Merriweather',serif;
     font-size:1em;
     padding:1em;
-    color:var(--darkblue);
+    color:var(--autumn);
     border-color:transparent;
     border-radius:0.25em;
     border-width:2px;
 }
 
 input, select, textarea {
-    background:var(--greybg);
+    background:var(--greentea);
 }
 
 input, select {
@@ -138,12 +139,12 @@ input::placeholder {
     text-transform: capitalize;
     font-style:italic;
     text-align:right;
-    color:var(--maintext);
+    color:#757575;
     padding-right:0.1em;
 }
 
 input:focus, select:focus {
-    outline-color:var(--blue);
+    outline-color:var(--yellowgreen);
     transition:outline 300ms;
 }
 
@@ -157,7 +158,7 @@ select option:disabled, select:invalid {
 }
 
 select option:not(:disabled) {
-    color:var(--darkblue);
+    color:var(--autumn);
 }
 
 textarea {
@@ -168,29 +169,29 @@ textarea {
 }
 
 textarea:focus {
-    border-color:var(--blue);
+    border-color:var(--yellowgreen);
     transition:border 300ms;
 }
 
 button[type="submit"] {
     width:100%;
     padding:2em;
-    background:var(--teal);
+    background:var(--goldenrod);
     color:#fff;
     font-size:1.2em;
     font-weight:700;
     cursor:pointer;
-    transition:background-color 300ms;
+    transition: 300ms;
 }
 
 button[type="submit"]:focus {
-    outline-color:var(--teal) !important;
+    outline-color:var(--goldenrod) !important;
     background:var(--maintext);
-    transition:outline background-color 300ms;
+    transition:outline, background-color 300ms;
 }
 
 button[type="submit"]:hover {
-    background:var(--darkblue);
+    background:var(--autumn);
     transition:background-color 300ms;
 }
 
@@ -198,7 +199,7 @@ button[type="submit"]:hover {
 
 header {
     width:100%;
-    background:var(--darkblue);
+    background:var(--autumn);
     color:#fff;
     text-align:center;
     padding:1.5em;
@@ -225,9 +226,9 @@ header p {
 hr#doublehr {
     width:92%;
     margin:0 auto;
-    border-top: 0.5em solid var(--darkblue);
+    border-top: 0.5em solid var(--salmon);
     padding-bottom:0.2em;
-    box-shadow:0em 0.25em 0 0 var(--darkblue);
+    box-shadow:0em 0.25em 0 0 var(--salmon);
     background:none;
 }
 
@@ -239,6 +240,20 @@ hr#doublehr {
     flex-flow:column wrap;
     margin-top:1.5em;
 }
+
+#contact .formgroup {
+    display:flex;
+    flex-flow:column wrap;
+}
+
+#signup .formgroup label {
+    flex: 0 0 100%;
+}
+
+#zipcode {
+    width:50%;
+}
+
 
 /* newsletter */
 
@@ -289,21 +304,21 @@ footer {
         padding:0;
     }
 
-    .formgroup {
-        display:flex;
+    #contact .formgroup {
         flex-flow:row nowrap;
-        justify-content:space-between;
+        justify-content:flex-start;
         align-items:center;
         width:100%;
     }
 
-    label {
-        flex:1;
+    #signup .formgroup label {
+        flex-basis:25%;
+        flex-grow:0;
+        margin-right:2em;
     }
-    
-    input, select {
-        flex:0 0 60%;
-        margin-right:auto;
+
+    #zipcode {
+        flex-basis:25%;
     }
 
     #newsletter fieldset {
@@ -317,9 +332,5 @@ footer {
     #newsletter input {
         flex:0;
         margin-right:0.5em;
-    }
-
-    hr:nth-of-type(1) {
-        margin:3em 0;
     }
 }
